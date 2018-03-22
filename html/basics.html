@@ -1,0 +1,83 @@
+<p>&nbsp;</p>
+<h3>Using Python for Physical Computing</h3>
+<p>ESP32 Pin Out (source: <a href="https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/pinouts" target="_blank" rel="noopener noreferrer">Adafruit</a>)</p>
+<p><img src="https://canvas.instructure.com/courses/1268196/files/61718206/download" alt="feather_gpio.jpg" width="500" height="237" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/1268196/files/61718206" data-api-returntype="File" /></p>
+<p>Top row:</p>
+<ul>
+<li><strong>13</strong> - This is GPIO #13. It's also connected to the red LED next to the USB port</li>
+<li><strong>12</strong> - This is GPIO #12. This pin has a pull-down resistor built into it, we recommend using it as an output only, or making sure that the pull-down is not affected during boot.</li>
+<li><strong>27</strong> - This is GPIO #27</li>
+<li><strong>33</strong> - This is GPIO #33. It can also be used to connect a 32 KHz crystal.</li>
+<li><strong>15 </strong>- This is GPIO #15</li>
+<li><strong>32</strong> - This is GPIO #32. It can also be used to connect a 32 KHz crystal.</li>
+<li><strong>14 </strong>- This is GPIO #14</li>
+</ul>
+<p>Bottom row:</p>
+<ul>
+<li><strong>A0</strong> - An analog output DAC2. It can also be used as a GPIO #26</li>
+<li><strong>A1</strong> - An analog output DAC1. It can also be used as a GPIO #25</li>
+<li><strong>A2</strong> - GPI #34. Note it is <em>not</em> an output-capable pin!</li>
+<li><strong>A3</strong> - GPI #39. Note it is <em>not</em> an output-capable pin!</li>
+<li><strong>A4</strong> - GPI #36. Note it is <em>not</em> an output-capable pin!</li>
+<li><strong>A5</strong> - GPIO #4</li>
+<li><strong>21</strong> - <span>GPIO</span> #21</li>
+</ul>
+<h3>Coding in Python</h3>
+<p>Using Python for microcontrollers is similar to using C in the Arduino IDE, and you can structure your code in a similar way, with a section for "setup" and a section for the event "loop".</p>
+<h4>Blink an LED</h4>
+<p>Arduino "C" example:</p>
+<pre>// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);                       // wait for a second
+}</pre>
+<p>A similar program in Python:</p>
+<pre>import machine
+import time
+
+#setup
+pin = machine.Pin(13, machine.Pin.OUT) # LED on the board
+
+#loop
+while True:
+  if pin.value() == 0:
+    pin.value(1)
+  else:
+    pin.value(0)
+  time.sleep(1.0)
+</pre>
+<h4>Read Analog Input</h4>
+<pre>import machine
+import time
+
+adc = machine.ADC(machine.Pin(34))
+adc.atten(machine.ADC.ATTN_11DB)
+
+while True:
+  print(adc.read())
+  time.sleep_ms(20)
+</pre>
+<h4>Read Analog Input and Switch LED</h4>
+<pre>import machine
+import time
+
+adc = machine.ADC(machine.Pin(34))
+adc.atten(machine.ADC.ATTN_11DB)
+
+led = machine.Pin(13, machine.Pin.OUT) # LED on the board
+
+while True:
+  if adc.read() &gt; 2048:
+    led.value(1)
+  else:
+    led.value(0)
+  time.sleep_ms(20)</pre>
+<p>&nbsp; &nbsp;&nbsp;</p>
