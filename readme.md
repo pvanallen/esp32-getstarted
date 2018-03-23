@@ -5,3 +5,5 @@ This is a get started guide for the ESP32 using [Micropython](https://docs.micro
 Everything has been testing using the [Adafruit Huzzah32](https://www.adafruit.com/product/3405), but should work on other implementations of the ESP32 (and most of this should also work on the ESP8266).
 
 1. [Set up your computer and ESP32](docs/setup.md)
+1. [Using Python with Sensors and Actuators](docs/basics.md)
+1. 
