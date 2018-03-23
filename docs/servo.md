@@ -17,7 +17,7 @@ But there is a simple [Servo Python class definition](https://bitbucket.org/thes
 
 ![servo_connection.png](servo_connection.png)
 
-### [servo.py](../examples/servo.py)
+### [servo_move.py](../examples/servo_move.py)
 
 - **Test Servo Code** - The following simple program will create a Servo object, and then move the servo from the 0 degree position, to 180, and then 90.
 
@@ -51,4 +51,6 @@ But there is a simple [Servo Python class definition](https://bitbucket.org/thes
     '''
     my_servo = Servo(servo_pin, 50, 600, 2400, 180)
 
-.
+### [servo_cycle.py](../examples/servo_cycle.py)
+
+This example uses threads to move a servo back and forth while allowing other processes in the main code to run.
