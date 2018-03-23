@@ -6,7 +6,7 @@
 
 Source: [Adafruit](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/pinouts)
 
-![feather_gpio.jpg](feather_gpio.jpg)
+<img src="feather_gpio.jpg" width="100%">
 
 Top row:
 
