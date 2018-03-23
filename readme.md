@@ -1,4 +1,4 @@
-# Get Started Guide for the ESP32
+# Getting Started Guide for the ESP32
 
 This is a get started guide for the ESP32 using [Micropython](https://docs.micropython.org/en/latest/esp8266/index.html). In the future, [Arduino Core](https://github.com/espressif/arduino-esp32) and [CircuitPython](https://learn.adafruit.com/welcome-to-circuitpython/what-is-circuitpython) (if Adafruit adds ESP32 support) info may be added. This chip is a great improvement on the already useful ESP8266, adding much more IO, and supporting both WiFi and Bluetooth.
 

@@ -1,3 +1,9 @@
+#
+# example ESP32 servo multitasking
+# phil van allen
+#
+# thanks to servo library from https://bitbucket.org/thesheep/micropython-servo
+#
 import time
 import machine
 import _thread as th

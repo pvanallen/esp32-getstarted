@@ -1,3 +1,9 @@
+#
+# example ESP32 servo
+# phil van allen
+#
+# thanks to servo library from https://bitbucket.org/thesheep/micropython-servo
+#
 import time
 import machine
 from servo import Servo

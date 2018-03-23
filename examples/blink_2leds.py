@@ -1,3 +1,9 @@
+#
+# example ESP32 multitasking
+# phil van allen
+#
+# thanks to https://youtu.be/iyoS9aSiDWg
+#
 import _thread as th
 import time
 from machine import Pin
