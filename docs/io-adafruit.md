@@ -5,7 +5,8 @@ We can turn the ESP32 into a cloud connected device that can be controlled from 
 1.  Set up your account on io.adafruit.com and get your username and authorization key
 1.  Enter this information into the code examples, along with your WiFi credentials
 1.  Change the myMqttClient in the code to a unique name for each different client you run simultaneously. If you use the same name for simultaneous connections to io.adafruit.com, you will get errors.
-1.  Before you can run the below example programs, you must install an MQTT library on your device with the following commands. Be sure you have uploaded the boot.py file customized with your WiFi credentials. **You only need to do this once**.
+1.  Before you can run the below example programs, you must install an MQTT library on your device. You use the upip command to install Python modules in Microphyhon, and this requires that WiFi be connected. So be sure you have uploaded the boot.py file customized with your WiFi credentials. **You only need to do this once**.
+1. Run the following commands to connect to WiFi and install the mqtt module.
 
 ```
 >>> import boot
