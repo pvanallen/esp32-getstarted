@@ -9,6 +9,7 @@ Everything has been testing using the [Adafruit Huzzah32](https://www.adafruit.c
 1. [Using WiFi](docs/usingwifi.md)
 1. [ESP32 Using io.adafruit.com Cloud IoT Service](docs/io-adafruit.md)
 1. [Using Servos](docs/servo.md)
+1. [Using NeoPixel](docs/neopixel.md)
 1. [Multitasking in Micropython with \_threads](docs/multitasking.md)
 
 <img src="docs/esp32.jpg" width="500">
