@@ -17,7 +17,10 @@ But there is a simple [Servo Python class definition](https://bitbucket.org/thes
 
 ![servo_connection.png](servo_connection.png)
 
--   **Test Servo Code** - The following simple program will create a Servo object, and then move the servo from the 0 degree position, to 180, and then 90.
+### [servo.py](../examples/servo.py)
+
+- **Test Servo Code** - The following simple program will create a Servo object, and then move the servo from the 0 degree position, to 180, and then 90.
+
 
 <!-- -->
 

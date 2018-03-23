@@ -50,7 +50,7 @@ Arduino "C" example:
       delay(1000);                       // wait for a second
     }
 
-A similar program in Python [blink.py](examples/blink.py)
+A similar program in Python [blink.py](../examples/blink.py)
 
     import machine
     import time
@@ -66,7 +66,7 @@ A similar program in Python [blink.py](examples/blink.py)
         pin.value(0)
       time.sleep(1.0)
 
-#### Read Analog Input - [analog_read.py](examples/analog_read.py)
+#### Read Analog Input - [analog_read.py](../examples/analog_read.py)
 
 
 
@@ -80,7 +80,7 @@ A similar program in Python [blink.py](examples/blink.py)
       print(adc.read())
       time.sleep_ms(20)
 
-#### Read Analog Input and Switch LED - [read_and_switch.py](examples/read_and_switch.py)
+#### Read Analog Input and Switch LED - [read_and_switch.py](../examples/read_and_switch.py)
 
     import machine
     import time

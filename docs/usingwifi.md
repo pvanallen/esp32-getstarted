@@ -10,7 +10,7 @@ After putting boot.py (see below) on your device, use the REPL to do the followi
     >>> boot.connect() # connects to WiFi
     >>> boot.showip() # tells you the IP address it got
 
-### boot.py
+### [boot.py](../examples/boot.py)
 
     yourWifiSSID = ""
     yourWifiPassword = ""
