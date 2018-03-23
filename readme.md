@@ -6,4 +6,6 @@ Everything has been testing using the [Adafruit Huzzah32](https://www.adafruit.c
 
 1. [Set up your computer and ESP32](docs/setup.md)
 1. [Using Python with Sensors and Actuators](docs/basics.md)
-1. 
+1. [Using WiFi](docs/usingwifi.md)
+1. [ESP32 Using io.adafruit.com Cloud IoT Service](docs/io-adafruit.md)
+1. [Multitasking in Micropython with \_threads](docs/multitasking.md)
