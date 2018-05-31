@@ -1,4 +1,4 @@
-## Set up computer (Mac for now -- [tutorial for Windows](https://lemariva.com/blog/2017/10/micropython-getting-started)
+## Set up computer (Mac for now -- [tutorial for Windows](https://lemariva.com/blog/2017/10/micropython-getting-started))
 
 **Install USB to Serial driver for Adafruit Huzzah32**
 
