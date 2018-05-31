@@ -16,7 +16,7 @@
 
 -   <https://micropython.org/download/#esp32>
 
-## Set up ESP32  
+## Set up ESP32    
 
 -   Connect device by USB
 -   Check the name of serial port:
