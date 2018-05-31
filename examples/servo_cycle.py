@@ -14,7 +14,6 @@ my_servo = Servo(pin1)
 delay = 0.025
 
 pwm1_running = True
-pwm2_running = True
 
 def fade(secs, run):
   steps = int(round(180/(secs / delay / 2)))
@@ -30,12 +29,9 @@ def fade(secs, run):
 def pwm1_run():
   return pwm1_running
 
-def pwm2_run():
-  return pwm2_running
-
 th.start_new_thread(fade, (3,pwm1_run))
 
+# do something else for 30 seconds
 time.sleep(30)
 
 pwm1_running = False
-#pwm2_running = False
