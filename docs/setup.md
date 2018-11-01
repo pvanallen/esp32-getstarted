@@ -3,7 +3,7 @@
 **Install USB to Serial driver for Adafruit Huzzah32**
 
 -   <https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers>
--   Use the .pkg for installation in the "Legacy MacVCP Driver" folder (the newer one does not seem to work) - you may need to open system preferences to allow install to complete
+-   Use the .pkg for installation. If the standard driver does not work, try the "Legacy MacVCP Driver" folder (the newer one does not seem to work) - you may need to open system preferences to allow install to complete.
 - Restart computer
 
 **Install Command line tools to work with ESP32**
@@ -54,5 +54,5 @@
 -   Run the python code on the device
     - ```import blink.py```
 -   Exit the REPL to edit code
-    - ```Ctrl-A Ctrl-\\```
+    - ```Ctrl-A Ctrl-\```
 -   Repeat
