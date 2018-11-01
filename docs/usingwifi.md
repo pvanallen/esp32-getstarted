@@ -2,13 +2,29 @@
 
 To make use of the ESP32 WiFi capabilities, you need a set of commands to configure the ESP to connect to your WiFi network with the correct SSID and Password.
 
-Typically, this is done with a file called boot.py. This file is automatically run at each startup. For testing purposes, I don't recommend you have this file actually connect to the network, but rather make it easy to connect when you want to. Later, if you want to install your device permanently, you can set the boot.py file to automatically connect to the WiFi.
+Typically, this is done with a file called boot.py. This file is automatically run at each startup (once boot.py has run, main.py will run next).
+
+When first testing WiFi, I don't recommend you have this file actually connect to the network, but rather make it easy to connect when you want to. Later, if you want to install your device permanently, you can set the boot.py file to automatically connect to the WiFi by uncommenting the line at the bottom with "connect()"
 
 After putting boot.py (see below) on your device, use the REPL to do the following
 
     >>> import boot
     >>> boot.connect() # connects to WiFi
     >>> boot.showip() # tells you the IP address it got
+
+NOTE: The WebREPL is now implemented for ESP32. This enables you to access the REPL on the device through a web page (using web sockets). For more info see the [WebREPL documentation](https://docs.micropython.org/en/latest/esp8266/tutorial/repl.html#webrepl-a-prompt-over-wifi).
+
+In short, after you've setup your boot.py file, you need to run:
+
+    >>> import webrepl_setup
+
+This will setup your password, and once connected to WiFi, you can go to:
+
+http://micropython.org/webrepl
+
+to access the REPL in your browser. It will also allow you to send and get files from the device. You'll need to know the IP address of the ESP32 to use WebREPL, which you can get with the below showip().
+
+--------
 
 ### [boot.py](../examples/boot.py)
 
