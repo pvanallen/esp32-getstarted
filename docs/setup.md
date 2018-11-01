@@ -43,8 +43,8 @@
 -   Write code on computer
     -    Use your text editor to create python code
     -    Save as .py file
-    -    Sample code: [blink.py](https://canvas.instructure.com/courses/1268196/files/61758749/download?wrap=1 "blink.py")
--   Put or get a file on the device
+    -    Sample code: [blink.py](../examples/blink.py)
+-   Put a file on the device, get a file from the device
     -    Note: You **must** exit the "screen" mode (Ctrl-A Ctrl-\\) to free up the USB port before you can use amp to access device files
     - ```cd /directory/where/your/code/is```
     - ```ampy -p /dev/tty.SLAB_USBtoUART put blink.py```
