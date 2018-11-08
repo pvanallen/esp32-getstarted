@@ -4,24 +4,26 @@ This page describes how do the repeating write and test code cycle (using a USB 
 
 ### Development - Serial Connection
 
+The USB/Serial connection to your device allows you to either access the ESP32 REPL, OR get/put files to your device.
+
+-   To get started, open two terminal windows on your computer. One of these will be used for accessing the REPL, and the other will be used for seding/getting files. This way you can easily switch back and forth between these two tasks, using the up arrow to simply repeat the last command.
 -   Write code on computer
-    -    Use your favorite text editor to create python code
-    -    Save as .py file
+    -    Use your favorite text editor to create your python code
+    -    Save as a .py file
     -    Sample code: [blink.py](../examples/blink.py)
--   Put a file/Get a file from the ESP32 device
-    -    **Note**: You **must** exit the "screen" mode (Ctrl-A Ctrl-\\) to free up the USB port before you can use ampy to access device files
+-   Terminal window 1: Put a file/Get a file from the ESP32 device
+    -    **Note**: You **must** exit the "screen" mode for REPLE (Ctrl-A Ctrl-\\) to free up the USB port before you can use ampy to access device files
     - ```cd /directory/where/your/code/is```
     - ```ampy -p /dev/tty.SLAB_USBtoUART put blink.py```
     - ```ampy -p /dev/tty.SLAB_USBtoUART get blink.py```
--   Start the REPL
+-   Terminal window 2: Start the REPL
     - ```screen /dev/tty.SLAB\_USBtoUART 115200```
--   Run the python code with the device REPL using screen
+    -   Run the python code with the device REPL using screen
     - ```import blink.py```
     - Test code
     - Use CTRL-C to exit code
     - Use CTRL-D to force a soft reboot
--   Exit "screen" and the REPL to allow sending new files to ESP32
-    - ```Ctrl-A Ctrl-\```
+    - Exit "screen" and the REPL to allow sending new files to ESP32 with ```Ctrl-A Ctrl-\```
 -   Repeat
 
 ### Development - WebREPL
