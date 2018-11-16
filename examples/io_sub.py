@@ -48,6 +48,6 @@ c.subscribe(bytes(adafruitFeed,'utf-8'))
 while True:
     c.check_msg()
     print("waiting...")
-    time.sleep(0.5)
+    time.sleep(2.0)
 
 c.disconnect()
