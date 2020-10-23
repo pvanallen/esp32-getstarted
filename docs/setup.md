@@ -1,4 +1,4 @@
-## Set up computer (Mac for now -- [tutorial for Windows](https://lemariva.com/blog/2017/10/micropython-getting-started))
+## Set up computer Mac for now -- ([tutorial for Windows](https://lemariva.com/blog/2017/10/micropython-getting-started))
 
 **Install USB to Serial driver for Adafruit Huzzah32**
 
@@ -16,12 +16,12 @@
 
 -   <https://micropython.org/download/esp32/>
 
-Select the most recent stable file, e.g. 
+Select the most recent stable file, e.g. esp32-idf3-20200902-v1.13.bin
 
 ## Set up ESP32    
 
 -   Connect device by USB
--   Check the name of serial port:
+-   Check the name of serial port, looking for one with "SLAB" in it:
     - ```ls /dev/tty*```
 -   Erase the device (must be done the fist time micropython is installed, or if device becomes stuck due to other problems)
     - ```esptool.py --chip esp32 -p /dev/tty.SLAB_USBtoUART erase_flash```
