@@ -14,7 +14,7 @@
 
 **Download Micropython software binary for ESP32**
 
--   <https://micropython.org/download/#esp32>
+-   <https://micropython.org/download/esp32/>
 
 ## Set up ESP32    
 
