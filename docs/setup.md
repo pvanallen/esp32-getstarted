@@ -16,7 +16,7 @@
 
 -   <https://micropython.org/download/esp32/>
 
-Select the most recent stable file, e.g. esp32-idf3-20200902-v1.13.bin
+Select the most recent stable ESP-IDF v3.x file, e.g. esp32-idf3-20200902-v1.13.bin
 
 ## Set up ESP32    
 
