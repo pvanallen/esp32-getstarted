@@ -16,6 +16,8 @@
 
 -   <https://micropython.org/download/esp32/>
 
+Select the most recent stable file, e.g. 
+
 ## Set up ESP32    
 
 -   Connect device by USB
