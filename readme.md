@@ -9,6 +9,7 @@ Everything has been testing using the [Adafruit Huzzah32](https://www.adafruit.c
 1. [Workflow and Deployment the ESP32](docs/workflow.md)
 1. [Using Python with Sensors and Actuators](docs/basics.md)
 1. [Using WiFi](docs/usingwifi.md)
+1. [Web Browser REPL](docs/webrepl-setup.md)
 1. [ESP32 Using io.adafruit.com Cloud IoT Service](docs/io-adafruit.md)
 1. [Using Servos](docs/servo.md)
 1. [Using NeoPixel](docs/neopixel.md)
