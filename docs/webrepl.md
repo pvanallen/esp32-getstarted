@@ -1,6 +1,6 @@
 ## Setting up WebREPL
 
-The normal methods for sending files and accessing the ESP32 REPL are kind of a pain and require using the Terminal with the AMPY and SCREEN commands. Instead of using the Terminal, it is possible to do both from within a web browser page.
+The normal methods for sending files and accessing the ESP32 REPL are kind of difficult and require using the Terminal with the AMPY and SCREEN commands. Instead of using the Terminal, it is possible to do both from within a web browser page.
 
 For this approach to work, you MUST have already setup [WiFi](usingwifi.md) with your boot.py file.
 
