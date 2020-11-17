@@ -57,7 +57,7 @@ called [secrets.py](../examples/secrets.py). You'll need to put your own ssid an
     # connect()
 
 ### [boot.py](../examples/boot.py)
-This example file works with an OLED Feather board that's connected to the ESP32
+This example file works with an OLED Feather board that's connected to the ESP32. Get the necessary driver module (ssd1306.py) for the SSD1306 OLED from [here](https://github.com/micropython/micropython/tree/master/drivers/display), and install it on your ESP32 board.
 
     import webrepl
     import time
