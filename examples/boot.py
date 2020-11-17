@@ -17,6 +17,9 @@ import webrepl
 import time
 import machine
 try:
+    # a working MicroPython driver for the SSD1306 OLED 128x32 (and other sizes) is
+    # available here https://github.com/micropython/micropython/tree/master/drivers/display
+    # ssd1306.py
     import ssd1306
     display_module = True
 except ImportError:
