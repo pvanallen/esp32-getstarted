@@ -1,6 +1,6 @@
 # boot.py file
-# set up for the Huzzah ESP32 from adafruit
-#   Works with an OLED Display even if the library is missing or the board is not attached
+# set up for the Huzzah ESP32 from adafruit https://www.adafruit.com/product/3619
+#   Works with an OLED Display even if the library is missing or the board is not attached https://www.adafruit.com/product/2900
 #   Starts the webrepl once WiFi is connected
 #   Uses an external file called secrets.py that contains wifi credentials
 #    in this format:

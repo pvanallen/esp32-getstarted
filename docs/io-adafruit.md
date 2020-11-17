@@ -23,7 +23,7 @@ Run this program and then go to your io.adafruit.com dashboard and add a data i
 
 ### [io_pub.py](../examples/io_pub.py)
 
-Run this program to repeatedly send values to the cloud. Then go to your io.adafruit.com dashboard and watch the values arrive in the feed called "test". Each time you add a new data item, it will show up on any device subscribed to this feed.
+Run this program to repeatedly send values from an analog input to the cloud. Then go to your io.adafruit.com dashboard and watch the values arrive in the feed called "test". 
 
 ### [io_pubsub.py](../examples/io_pubsub.py)
 
