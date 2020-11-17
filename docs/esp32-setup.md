@@ -15,7 +15,7 @@ Select the most recent stable ESP-IDF v3.x file, e.g. esp32-idf3-20200902-v1.13.
     - ```esptool.py --chip esp32 -p /dev/tty.SLAB_USBtoUART erase_flash```
 -   Flash the micropython software
     - ```esptool.py --chip esp32 -p /dev/tty.SLAB_USBtoUART write_flash -z 0x1000 nameOfMicropythonBinary.bin```
--   Power off/on device after binary finishes installing, then reconnect to computer.
+-   Power off/on disconnect/reconnect USB to the device after the binary finishes installing.
 -   Try out the Python REPL on the device by opening a serial connection "terminal" to the device.
     - ```screen /dev/tty.SLAB_USBtoUART 115200```
     - hit return to see ">>> " prompt
@@ -24,6 +24,8 @@ Select the most recent stable ESP-IDF v3.x file, e.g. esp32-idf3-20200902-v1.13.
 -   List files
     - ```import os```
     - ```os.listdir()```
+-   More MicroPython os commands:
+    - http://docs.micropython.org/en/v1.7/esp8266/library/os.html
 -   Ctrl-A Ctrl-\\ to disconnect from device and get out of screen mode
 -   See files on the device disk from computer command line
     - ```ampy -p /dev/tty.SLAB_USBtoUART ls```

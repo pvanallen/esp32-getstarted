@@ -19,7 +19,11 @@ We can turn the ESP32 into a cloud connected device that can be controlled from 
 
 ### [io_sub.py](../examples/io_sub.py)
 
-Run this program and then go to your io.adafruit.com dashboard and add a data item to a feed called "test". Each time you add a new data item, it will show up on your device and turn an LED on (\>=4) or off (\<4). This because the program "subscribes" to that particular feed, and gets notified each time it changes.
+Run this program and then go to your io.adafruit.com dashboard and add a data item to a feed called "test". Each time you add a new data item, it will show up on your device and turn an LED on (\>2) or off (\<2). This is because this program "subscribes" to that particular feed, and gets notified each time it changes.
+
+### [io_pub.py](../examples/io_pub.py)
+
+Run this program to repeatedly send values to the cloud. Then go to your io.adafruit.com dashboard and watch the values arrive in the feed called "test". Each time you add a new data item, it will show up on any device subscribed to this feed.
 
 ### [io_pubsub.py](../examples/io_pubsub.py)
 
