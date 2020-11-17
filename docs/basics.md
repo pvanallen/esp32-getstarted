@@ -28,9 +28,7 @@ Bottom row:
 -   **A5** - GPIO \#4
 -   **21** - GPIO \#21
 
-<img src="esp32-knob1-anotated.jpg" width="300">
-<img src="esp32-knob2-anotated.jpg" width="300">
-<img src="esp32-knob3-anotated.jpg" width="300">
+<img src="esp32-knob1-anotated.jpg" width="300"><img src="esp32-knob2-anotated.jpg" width="300"><img src="esp32-knob3-anotated.jpg" width="300">
 
 ## Coding in Python
 
