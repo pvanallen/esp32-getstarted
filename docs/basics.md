@@ -28,6 +28,10 @@ Bottom row:
 -   **A5** - GPIO \#4
 -   **21** - GPIO \#21
 
+<img src="esp32-knob1-anotated.jpg" width="300">
+<img src="esp32-knob2-anotated.jpg" width="300">
+<img src="esp32-knob3-anotated.jpg" width="300">
+
 ## Coding in Python
 
 Using Python for microcontrollers is similar to using C in the Arduino IDE, and you can structure your code in a similar way, with a section for "setup" and a section for the event "loop".
@@ -66,7 +70,9 @@ A similar program in Python [blink.py](../examples/blink.py)
         led.value(0)
       time.sleep(1.0)
 
-#### Read Analog Input - [analog_read.py](../examples/analog_read.py)
+#### Read Analog Input (ADC) - [analog_read.py](../examples/analog_read.py)
+
+[For more information on ADC on the ESP32](https://docs.micropython.org/en/latest/esp32/quickref.html#adc-analog-to-digital-conversion)
 
     import machine
     import time
