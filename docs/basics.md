@@ -4,9 +4,13 @@
 
 ## Adafruit Huzzah32 Pin Out
 
-Source: [Adafruit](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/pinouts)
-
 <img src="feather_gpio.jpg" width="500">
+
+Diagram: [Adafruit](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/pinouts)
+
+<img src="AdafruitHuzzah32PinDiagram.png" width="800">
+
+Diagram: [Jon Froehlich](https://makeabilitylab.github.io/physcomp/esp32/esp32.html)
 
 Top row:
 
