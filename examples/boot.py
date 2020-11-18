@@ -1,5 +1,5 @@
-# boot.py file
-# set up for the Huzzah ESP32 from adafruit https://www.adafruit.com/product/3619
+# boot.py
+# startup file for the Huzzah ESP32 from adafruit https://www.adafruit.com/product/3619
 #   Works with an OLED Display even if the library is missing or the board is not attached https://www.adafruit.com/product/2900
 #   Starts the webrepl once WiFi is connected
 #   Uses an external file called secrets.py that contains wifi credentials
@@ -9,13 +9,12 @@
 #     'ssid' : 'yourWifiSSID',
 #     'password' : 'yourWifiPassword',
 #     'timezone' : "America/Los_Angeles", # http://worldtimeapi.org/timezones
-#     'github_token' : 'fawfj23rakjnfawiefa',
-#     'hackaday_token' : 'h4xx0rs3kret',
 #     }
 
 import webrepl
 import time
 import machine
+display_module = False
 try:
     # a working MicroPython driver for the SSD1306 OLED 128x32 (and other sizes) is
     # available here https://github.com/micropython/micropython/tree/master/drivers/display
@@ -23,8 +22,9 @@ try:
     import ssd1306
     display_module = True
 except ImportError:
-    print("ssd1306 OLED module not available")
-    display_module = False
+    print("ssd1306.py file for OLED module not available")
+    print("get it from here: https://github.com/micropython/micropython/tree/master/drivers/display")
+    pass
 
 wifi_timelimit = 5.0
 
@@ -57,8 +57,8 @@ def connect():
             pass
         ipaddress = sta_if.ifconfig()[0]
         print("connected to " + yourWifiSSID + ' with IP address:' , ipaddress)
-
         webrepl.start()
+
         if display_module:
             try:
                 oled = ssd1306.SSD1306_I2C(128, 32, i2c, 0x3c)
@@ -67,7 +67,7 @@ def connect():
             except OSError as err:
                 display_connected = False
                 print("Error connecting to OLED Display")
-                print("OLED: " + err)
+                print("OLED: " + str(err))
                 if err == "[Errno 110] ETIMEDOUT":
                     print("OLED display NOT connected...")
 
