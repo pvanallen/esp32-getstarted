@@ -1,5 +1,3 @@
- 
-
 # Using Python with Sensors and Actuators
 
 ## Adafruit Huzzah32 Pin Out
@@ -26,9 +24,9 @@ Bottom row:
 
 -   **A0** - An analog output DAC2. It can also be used as a GPIO \#26
 -   **A1** - An analog output DAC1. It can also be used as a GPIO \#25
--   **A2** - GPI \#34. Note it is *not* an output-capable pin!
--   **A3** - GPI \#39. Note it is *not* an output-capable pin!
--   **A4** - GPI \#36. Note it is *not* an output-capable pin!
+-   **A2** - GPI \#34. Analog Input - Note it is *not* an output-capable pin!
+-   **A3** - GPI \#39. Analog Input - Note it is *not* an output-capable pin!
+-   **A4** - GPI \#36. Analog Input - Note it is *not* an output-capable pin!
 -   **A5** - GPIO \#4
 -   **21** - GPIO \#21
 

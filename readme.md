@@ -11,6 +11,7 @@ Everything has been tested using the [Adafruit Huzzah32](https://www.adafruit.co
 1. [Using WiFi and Automating Boot](docs/usingwifi.md)
 1. [Web Browser REPL](docs/webrepl.md)
 1. [ESP32 Using io.adafruit.com Cloud IoT Service](docs/io-adafruit.md)
+1. [Using an OLED Display](docs/oled.md)
 1. [Using Servos](docs/servo.md)
 1. [Using NeoPixel](docs/neopixel.md)
 1. [Multitasking in Micropython with \_threads](docs/multitasking.md)
