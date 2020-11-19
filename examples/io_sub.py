@@ -2,7 +2,7 @@
 # example ESP8266 or ESP32 Huzzah mqtt subscribe with io.adafruit.com
 # phil van allen
 #
-# thanks to https://github.com/MikeTeachman/micropython-adafruit-mqtt-esp8266/blob/master/mqtt-to-adafruit.py
+# for more info see: https://github.com/micropython/micropython-lib/tree/master/umqtt.simple
 # https://github.com/micropython/micropython-lib/blob/master/umqtt.simple/example_sub.py
 #
 
