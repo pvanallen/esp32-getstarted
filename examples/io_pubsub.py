@@ -20,34 +20,29 @@ def sub_cb(topic, msg):
     else:
       pin.value(0)
 
+# configuration from io.adafruit.com
 #
-# connect the ESP to local wifi network
-#
-yourWifiSSID = "<yourWifiSSID>"
-yourWifiPassword = "<yourWifiPassword>"
-sta_if = network.WLAN(network.STA_IF)
-if not sta_if.isconnected():
-  sta_if.active(True)
-  sta_if.connect(yourWifiSSID, yourWifiPassword)
-  while not sta_if.isconnected():
-    pass
-print("connected to WiFi")
+ADAFRUIT_IO_USERNAME = "<enter your Adafruit Username here>"  # can be found by clicking on "MY KEY" when viewing your account on io.adafruit.com
+ADAFRUIT_IO_KEY = "<enter your Adafruit IO Key here>"  # can be found by clicking on "MY KEY" when viewing your account on io.adafruit.com
+# only one program with the same MqttClient Name can access the Adarfuit service at a time
+myMqttClient = "phils_client1" # replace with your own client name unique to you and this code instance
+adafruitFeed = ADAFRUIT_IO_USERNAME + "/feeds/test" # replace "test" with your feed name
+adafruitIoUrl = "io.adafruit.com"
 
 #
 # connect ESP to Adafruit IO using MQTT
-#
-myMqttClient = "<enter a unique client name here>"  # replace with your own client name
-adafruitUsername = "<enter your Adafruit Username here>"  # can be found at "My Account" at adafruit.com
-adafruitAioKey = "<enter your Adafruit IO Key here>"  # can be found by clicking on "VIEW AIO KEYS" when viewing an Adafruit IO Feed
-adafruitFeed = adafruitUsername + "/feeds/test" # replace "test" with your feed name
-adafruitIoUrl = "io.adafruit.com"
+def connect_mqtt():
+    c = MQTTClient(myMqttClient, adafruitIoUrl, 0, ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY, keepalive=10000)
+    c.set_callback(sub_cb)
+    c.connect()
+    c.subscribe(bytes(adafruitFeed,'utf-8'))
+    return c
 
-c = MQTTClient(myMqttClient, adafruitIoUrl, 0, adafruitUsername, adafruitAioKey)
-c.set_callback(sub_cb)
-c.connect()
-c.subscribe(bytes(adafruitFeed,'utf-8'))
 
-for i in range(10):
+#c = MQTTClient(myMqttClient, adafruitIoUrl, 0, adafruitUsername, adafruitAioKey)
+c = connect_mqtt()
+
+for i in range(15):
   print(i)
   c.publish(adafruitFeed, str(i))
   time.sleep(2)

@@ -3,6 +3,7 @@
 # phil van allen
 #
 # thanks to https://github.com/MikeTeachman/micropython-adafruit-mqtt-esp8266/blob/master/mqtt-to-adafruit.py
+# https://github.com/micropython/micropython-lib/blob/master/umqtt.simple/example_sub.py
 #
 
 import network
@@ -10,43 +11,62 @@ import time
 import machine
 from umqtt.simple import MQTTClient
 
-pin = machine.Pin(13, machine.Pin.OUT) # LED on the board
+delay = 0.5
+led_pin = machine.Pin(13, machine.Pin.OUT) # LED on the board
 
 def sub_cb(topic, msg):
-    value = float(str(msg,'utf-8'))
+    # print(topic,msg)
+    value = float(str(msg,'utf-8')) # convert subscribed value to a float
     print("subscribed value = {}".format(value))
+    # turn on an LED if the value is greater than 2
     if value > 2:
-      pin.value(1)
+      led_pin.value(1)
     else:
-      pin.value(0)
+      led_pin.value(0)
 #
 # This code assumes the ESP32 is already connect to WiFi
 #
 
+#
+# configuration from io.adafruit.com: My Key
+#
+ADAFRUIT_IO_USERNAME = "<enter your Adafruit Username here>"  # can be found by clicking on "MY KEY" when viewing your account on io.adafruit.com
+ADAFRUIT_IO_KEY = "<enter your Adafruit IO Key here>"  # can be found by clicking on "MY KEY" when viewing your account on io.adafruit.com
+
+# only one program with the same MqttClient Name can access the Adarfuit service at a time
+myMqttClient = "phils_client1" # replace with your own client name unique to you and this code instance
+adafruitFeed = ADAFRUIT_IO_USERNAME + "/feeds/test" # replace "test" with your feed name
+adafruitIoUrl = "io.adafruit.com"
+
+#
 # connect ESP to Adafruit IO using MQTT
 #
-myMqttClient = "<enter a unique client name here>"  # replace with your own client name
-adafruitUsername = "<enter your Adafruit Username here>"  # can be found at "My Account" at adafruit.com
-adafruitAioKey = "<enter your Adafruit IO Key here>"  # can be found by clicking on "MY KEY" when viewing your account on io.adafruit.com
-adafruitFeed = adafruitUsername + "/feeds/test" # replace "test" with your feed name
-adafruitIoUrl = "io.adafruit.com"
+def connect_mqtt():
+    c = MQTTClient(myMqttClient, adafruitIoUrl, 0, ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY, keepalive=10000)
+    c.set_callback(sub_cb)
+    c.connect()
+    c.subscribe(bytes(adafruitFeed,'utf-8'))
+    return c
 
-myMqttClient = "pva"  # replace with your own client name
-adafruitUsername = "pvanallen"  # can be found at "My Account" at adafruit.com
-adafruitAioKey = "ca67b97ac8adf9f9051f5333c72a53859af8ab07"  # can be found by clicking on "MY KEY" when viewing an Adafruit IO Feed
-adafruitFeed = adafruitUsername + "/feeds/test" # replace "test" with your feed name
-adafruitIoUrl = "io.adafruit.com"
+c = connect_mqtt()
 
-c = MQTTClient(myMqttClient, adafruitIoUrl, 0, adafruitUsername, adafruitAioKey)
-c.set_callback(sub_cb)
-c.connect()
-c.subscribe(bytes(adafruitFeed,'utf-8'))
+start_time = time.time()
+time_keeper = time.time()
+print("Waiting for any changes in",adafruitFeed + "...")
 
 while True:
-    c.check_msg()
-    print("waiting...")
-    # be careful how often you update, or adafruit may block you
-    # the limit is 30 times maximum per minute
-    time.sleep(3.0)
+    try:
+        if time.time() - time_keeper > 5:
+            print(time.time() - start_time,"secs elapsed")
+            time_keeper = time.time()
+        c.check_msg()
+    except:
+        # sometimes io.adafruit.com disconnects with an error
+        print("error from io.adafruit - reconnecting...")
+        # create a new connection
+        c = connect_mqtt()
+        pass
+
+    time.sleep(delay)
 
 c.disconnect()

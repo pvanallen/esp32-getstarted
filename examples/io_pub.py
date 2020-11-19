@@ -10,35 +10,43 @@ import time
 import machine
 from umqtt.simple import MQTTClient
 
-adc = machine.ADC(machine.Pin(34))
+last_value = -1
+
+# set up the analog input
+adc = machine.ADC(machine.Pin(39))
 adc.atten(machine.ADC.ATTN_11DB)
 
 def sub_cb(topic, msg):
     value = float(str(msg,'utf-8'))
     print("subscribed value = {}".format(value))
-    if value > 2:
-      pin.value(1)
-    else:
-      pin.value(0)
+#
+# configuration from io.adafruit.com
+#
+ADAFRUIT_IO_USERNAME = "<enter your Adafruit Username here>"  # can be found at "My Account" at adafruit.com
+ADAFRUIT_IO_KEY = "<enter your Adafruit IO Key here>"  # can be found by clicking on "MY KEY" when viewing your account on io.adafruit.com
+
+# only one program with the same MqttClient Name can access the Adarfuit service at a time
+myMqttClient = "pva" # replace with your own client name unique to you and this code
+adafruitFeed = ADAFRUIT_IO_USERNAME + "/feeds/test" # replace "test" with your feed name
+adafruitIoUrl = "io.adafruit.com"
+
 #
 # connect ESP to Adafruit IO using MQTT
 #
-myMqttClient = "<enter a unique client name here>"  # replace with your own client name
-adafruitUsername = "<enter your Adafruit Username here>"  # can be found at "My Account" at adafruit.com
-adafruitAioKey = "<enter your Adafruit IO Key here>"  # can be found by clicking on "MY KEY" when viewing your account on io.adafruit.com
-adafruitFeed = adafruitUsername + "/feeds/test" # replace "test" with your feed name
-adafruitIoUrl = "io.adafruit.com"
-
-c = MQTTClient(myMqttClient, adafruitIoUrl, 0, adafruitUsername, adafruitAioKey)
+c = MQTTClient(myMqttClient, adafruitIoUrl, 0, ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY)
 c.set_callback(sub_cb)
 c.connect()
 c.subscribe(bytes(adafruitFeed,'utf-8'))
 
 while True:
   value = adc.read()
-  print("analog in read = ",value)
+  print("analog read = ",value)
 
-  c.publish(adafruitFeed, str(value))
+  if value != last_value: # prevent sending duplicate values to keep traffic low
+      c.publish(adafruitFeed, str(value))
+      last_value = value
+  # be careful about how frequently you send data to the cloud service
+  # or they may limit your access
   time.sleep(2)
 
 c.disconnect()
