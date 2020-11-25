@@ -17,7 +17,7 @@ Connect your touch pad wire to the Pin you select from the above. In this exampl
 
 ## Example code
 
-Note that a capacitive touch Pin will return **lower values** when the sensor is touched. In this test, it returned values near the following:
+Note that a capacitive touch Pin will return **lower values** when the sensor IS touched. In this test, it returned values near the following:
 
 - **untouched: ~465**
 - **touched: ~80**
