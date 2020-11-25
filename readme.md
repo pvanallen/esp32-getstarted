@@ -12,6 +12,7 @@ Everything has been tested using the [Adafruit Huzzah32](https://www.adafruit.co
 1. [Web Browser REPL](docs/webrepl.md)
 1. [ESP32 Using io.adafruit.com Cloud IoT Service](docs/io-adafruit.md)
 1. [Using Capacitive Touch Pins](docs/cap_touch.md)
+1. [Using PWM to control LED brightness](docs/pwm.md)
 1. [Using an OLED Display](docs/oled.md)
 1. [Using Servos](docs/servo.md)
 1. [Using NeoPixel](docs/neopixel.md)
