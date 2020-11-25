@@ -5,7 +5,7 @@ The ESP32 comes with some Pins capable of sensing touch without any extra hardwa
 https://docs.micropython.org/en/latest/esp32/quickref.html#capacitive-touch
 
 ## Capacitive Touch Configured Pins
-Purple Pins 4, 12, 13, 14, 15, 27, 32, 33
+Purple Pins 4, 13, 14, 15, 27, 32, 33
 
 <img src="AdafruitHuzzah32PinDiagram.png" width="800">
 
