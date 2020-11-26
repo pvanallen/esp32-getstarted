@@ -1,4 +1,4 @@
-## Using io.adafruit.com Cloud IoT Service
+## Using io.adafruit.com Cloud IoT Service with photocell light sensor
 
 We can turn the ESP32 into a cloud connected device that can be controlled from anywhere in the world by using an IoT cloud service like [io.adafruit.com](https://io.adafruit.com/).
 
@@ -11,9 +11,9 @@ We can turn the ESP32 into a cloud connected device that can be controlled from 
 1.  You should already be connecting to WiFi through your boot.py
 
 ### Install MQTT library/module on your device
-Before you can run the below example programs, you must install an MQTT library/nodule on your device. You use the upip command to install Python modules in Microphyhon, and this requires that WiFi be connected. So be sure you have uploaded the boot.py file customized with your WiFi credentials. **You only need to install this library/nodule once**.
+Before you can run the below example programs, you must install an MQTT library/nodule on your device. You use the upip command to install Python modules in Microphyhon which requires that WiFi be connected. So be sure you have uploaded the boot.py file customized with your WiFi credentials. **You only need to install this library/nodule once**.
 
-Run the following commands to connect to WiFi and install the mqtt module.
+Run the following commands to connect to WiFi and install the micropython mqtt module.
 
 To do this, you MUST already be connected to wifi
 
@@ -32,6 +32,14 @@ Run this program and then go to your io.adafruit.com feed to add a data item to 
 #### [io_pub.py](../examples/io_pub.py)
 
 Run this program to repeatedly send values from an analog input to the cloud. Then go to your io.adafruit.com dashboard and watch the values arrive in the feed called "test". This program assume you have an analog sensor connected to Pin 34 (A2).
+
+This example uses a light sensor for the analog input, where the photocell is part of a voltage divider made with a 10K ohm resistor.
+
+<img src="light_sensor_bb.gif" width="300">
+<br>
+<img src="light_sensor1.jpg" width="600"><br>
+<img src="light_sensor2.jpg" width="300">
+<img src="light_sensor3.jpg" width="300">
 
 #### [io_pubsub.py](../examples/io_pubsub.py)
 

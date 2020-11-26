@@ -10,7 +10,7 @@ Everything has been tested using the [Adafruit Huzzah32](https://www.adafruit.co
 1. [Using Python with Sensors and Actuators](docs/basics.md)
 1. [Using WiFi and Automating Boot](docs/usingwifi.md)
 1. [Web Browser REPL](docs/webrepl.md)
-1. [ESP32 Using io.adafruit.com Cloud IoT Service](docs/io-adafruit.md)
+1. [Using io.adafruit.com Cloud IoT Service with photocell](docs/io-adafruit.md)
 1. [Using Capacitive Touch Pins](docs/cap_touch.md)
 1. [Using PWM to control LED brightness](docs/pwm.md)
 1. [Using an OLED Display](docs/oled.md)
