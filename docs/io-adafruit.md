@@ -35,11 +35,12 @@ Run this program to repeatedly send values from an analog input to the cloud. Th
 
 This example uses a light sensor for the analog input, where the photocell is part of a voltage divider made with a 10K ohm resistor.
 
-<img src="light_sensor_bb.gif" width="300">
+<img src="light_sensor_bb.gif" width="600">
 <br>
+<img src="light_sensor3.jpg" width="600">
 <img src="light_sensor1.jpg" width="600"><br>
-<img src="light_sensor2.jpg" width="300">
-<img src="light_sensor3.jpg" width="300">
+<img src="light_sensor2.jpg" width="600">
+
 
 #### [io_pubsub.py](../examples/io_pubsub.py)
 
