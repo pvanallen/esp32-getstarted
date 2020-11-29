@@ -58,7 +58,7 @@ time.sleep(2)
 my_servo.write_angle(90)
 ```
 
--   Note that each servo is different, and may not travel it's entire range with the default values of the Servo object. You can experiment by changing the min\_us and max\_us values when you create the Servo object if you use the fuller initialization arguments. See the servo.py module source code below for more details.
+-   Note that each servo is different, and may not travel it's entire range with the default values of the Servo object. You can experiment by changing the min\_us and max\_us values when you create the Servo object if you use the fuller initialization arguments. See the servo.py module source code below, and [this page](http://techawarey.com/programming/micropython/servo-motor-control-using-micropython/) for more details.
 
 <!-- -->
 
