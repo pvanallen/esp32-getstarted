@@ -11,7 +11,7 @@ But there is a simple [Servo Python class definition](../examples/servo.py) ori
 
 <!-- -->
 
-    ampy -p /dev/tty.SLAB_USBtoUART put servo.py device
+    ampy -p /dev/tty.SLAB_USBtoUART put servo.py
 
 ## PWM Output Capable Pins
 Orange Pins (**GPIO, not GPI**) 4, 5, 13, 14, 15, 16, 17, 18, 19, 25, 26, 27, 32, 33 (Pin 12 is not recommended)
