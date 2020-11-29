@@ -25,13 +25,29 @@ To do this, you MUST already be connected to wifi
 ```
 
 ### Code Examples
+
+For these examples, you must replace the placeholders for the adafruit username and key, as well as set your own unique value for the client name. Do this in the following section of code:
+
+```Python
+#
+# configuration from io.adafruit.com
+#
+ADAFRUIT_IO_USERNAME = "enter an Adafruit Username here"  # can be found at "My Account" at adafruit.com
+ADAFRUIT_IO_KEY = "enter an Adafruit IO Key here"  # can be found by clicking on "MY KEY" when viewing your account on io.adafruit.com
+
+# only one program with the same MqttClient Name can access the Adarfuit service at a time
+myMqttClient = "your_unique_id" # replace with your own client name unique to you and this code
+adafruitFeed = ADAFRUIT_IO_USERNAME + "/feeds/test" # replace "test" with your feed name
+adafruitIoUrl = "io.adafruit.com"
+```
+
 #### [io_sub.py](../examples/io_sub.py)
 
 Run this program and then go to your io.adafruit.com feed to add a data item to a feed called "test". Each time you add a new data item, it will show up on your device. This is because this program "subscribes" to that particular feed, and gets notified each time it changes.
 
 #### [io_pub.py](../examples/io_pub.py)
 
-Run this program to repeatedly send values from an analog input to the cloud. Then go to your io.adafruit.com dashboard and watch the values arrive in the feed called "test". This program assume you have an analog sensor connected to Pin 34 (A2).
+Run this program to continuously send values from an analog input to the cloud. Then go to your io.adafruit.com dashboard and watch the values arrive in the feed called "test". This program assume you have an analog sensor connected to Pin 34 (A2). [See this page](basics.md) for more details about which pins are capable of analog input using ADC.
 
 This example uses a light sensor for the analog input, where the photocell is part of a voltage divider made with a 10K ohm resistor.
 

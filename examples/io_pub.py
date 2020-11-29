@@ -13,7 +13,7 @@ from umqtt.simple import MQTTClient
 last_value = -1
 
 # set up the analog input
-adc = machine.ADC(machine.Pin(39))
+adc = machine.ADC(machine.Pin(34)) #A2
 adc.atten(machine.ADC.ATTN_11DB)
 
 # def sub_cb(topic, msg):
@@ -23,8 +23,8 @@ adc.atten(machine.ADC.ATTN_11DB)
 #
 # configuration from io.adafruit.com
 #
-ADAFRUIT_IO_USERNAME = "enter your Adafruit Username here"  # can be found at "My Account" at adafruit.com
-ADAFRUIT_IO_KEY = "enter your Adafruit IO Key here"  # can be found by clicking on "MY KEY" when viewing your account on io.adafruit.com
+ADAFRUIT_IO_USERNAME = "enter an Adafruit Username here"  # can be found at "My Account" at adafruit.com
+ADAFRUIT_IO_KEY = "enter an Adafruit IO Key here"  # can be found by clicking on "MY KEY" when viewing your account on io.adafruit.com
 
 # only one program with the same MqttClient Name can access the Adarfuit service at a time
 myMqttClient = "your_unique_id" # replace with your own client name unique to you and this code
