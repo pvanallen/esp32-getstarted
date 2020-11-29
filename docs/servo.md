@@ -7,8 +7,9 @@ But there is a simple [Servo Python class definition](../examples/servo.py) ori
 ### How To
 
 -   **Download** - Get the [servo Python class from here](../examples/servo.py)
--   **Install Servo Library** - Use ampy to put the servo.py module on your
+-   **Install Servo Library** - Use ampy to put the servo.py module on your device
 
+<!-- -->
 
     ampy -p /dev/tty.SLAB_USBtoUART put servo.py device
 
