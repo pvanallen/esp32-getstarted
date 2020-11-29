@@ -13,7 +13,7 @@ But there is a simple [Servo Python class definition](../examples/servo.py) ori
 
     ampy -p /dev/tty.SLAB_USBtoUART put servo.py
 
-## PWM Output Capable Pins
+## PWM - Servo Output Capable Pins
 Orange Pins (**GPIO, not GPI**) 4, 5, 13, 14, 15, 16, 17, 18, 19, 25, 26, 27, 32, 33 (Pin 12 is not recommended)
 
 <img src="AdafruitHuzzah32PinDiagram.png" width="800">
@@ -25,7 +25,7 @@ Diagram: [Jon Froehlich](https://makeabilitylab.github.io/physcomp/esp32/esp32.h
 **Pins** - In this example, we're using Pin(15) for the Servo output
 
 **Servo** - Connect the servo in the following way
-- **signal** control (typically yellow or white)
+- **signal** control (typically yellow or white) to Pin(15) or your choice of output pin
 - **power** to the 3V output
 - **ground** to the GND
 
