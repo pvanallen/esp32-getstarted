@@ -42,4 +42,5 @@ while True:
   value = int(adc.read() * 0.25) # convert range 0-4095 to 0-1023
   led.duty(value)
   print(value)
-  time.sleep(delay)```
+  time.sleep(delay)
+  ```
