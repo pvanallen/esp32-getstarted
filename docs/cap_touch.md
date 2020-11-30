@@ -42,4 +42,5 @@ while True:
       led_pin.value(1)
     else:
       led_pin.value(0)
-    time.sleep(delay)```
+    time.sleep(delay)
+```
