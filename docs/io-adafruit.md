@@ -60,4 +60,8 @@ This example uses a light sensor for the analog input, where the photocell is pa
 
 #### [io_pubsub.py](../examples/io_pubsub.py)
 
-This code both publishes, and is subscribed to the cloud. Each time it sends a value to the cloud, it is immediately notified that a change happened for that feed. This simulates how you might set up two different devices, where one publishes, and the other subscribes to the same feed. This way, they can communicate to each other from any location.
+This code both publishes and is subscribed to the cloud. Each time it sends a value to the cloud, it is immediately notified that a change happened for that feed. This simulates how you might set up two different devices, where one publishes, and the other subscribes to the same feed. This way, they can communicate to each other from any location.
+
+#### [io_sub_mult.py](../examples/io_sub_mult.py)
+
+This example shows how to access multiple feeds in one program. [Documentation for io_sub_mult.py](io-adafruit-mult.md).

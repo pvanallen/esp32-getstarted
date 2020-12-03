@@ -6,7 +6,6 @@
 # https://github.com/micropython/micropython-lib/blob/master/umqtt.simple/example_sub.py
 #
 
-import network
 import time
 import machine
 from umqtt.simple import MQTTClient
