@@ -33,11 +33,13 @@ Diagram: [Jon Froehlich](https://makeabilitylab.github.io/physcomp/esp32/esp32.h
 <img src="servo2.jpg" width="600">
 <img src="servo.gif" width="600">
 
--   **External Power** - The ESP32 may not be able to properly power a full size servo (especially more than one at at time), so you may need to use an external power supply of 5 to 6 Volts (most hobby servos run on this). This can be [4 AA](https://www.adafruit.com/product/830) or [4 AAA](https://www.allelectronics.com/item/bh-44/battery-holder-4-aaa-cells/1.html?gclid=CjwKCAjw4sLVBRAlEiwASblR-_0YxFC1F8005xjriXw_vYbQ90sBTLn9MXfIM5p7ppEAEYIWInOkxhoC3_4QAvD_BwE) batteries, or a 3.3V LiPo with a [5V converter](https://www.adafruit.com/product/1903). The servo should connect to the power and ground of the battery, and the output pin on the ESP32.
+## External Power
 
-- In addition, you **must connect the battery ground to the ESP32 ground**. This diagram shows this wiring approach for 2 servos connect to an Arduino, but it's the same approach for the ESP32.
+The ESP32 may not be able to properly power a full size servo (especially more than one at at time), so you may need to use an external power supply of 5 to 6 Volts (most hobby servos run on this). This can be [4 AA](https://www.adafruit.com/product/830) or [4 AAA](https://www.allelectronics.com/item/bh-44/battery-holder-4-aaa-cells/1.html?gclid=CjwKCAjw4sLVBRAlEiwASblR-_0YxFC1F8005xjriXw_vYbQ90sBTLn9MXfIM5p7ppEAEYIWInOkxhoC3_4QAvD_BwE) batteries, or a 3.3V LiPo with a [5V converter](https://www.adafruit.com/product/1903). The servo(s) should connect to the power and ground of the battery, and the output pin on the ESP32.
 
-![servo_connection.png](servo_connection.png)
+In addition, you **must connect the battery ground to the ESP32 ground**. This diagram shows this wiring approach for 2 servos connect to the ESP32 pins 15 and 32, but you can choose your other PWM pins.
+
+<img src="two-servos-batt.gif" width="600">
 
 ### [servo_move.py](../examples/servo_move.py)
 
