@@ -64,16 +64,16 @@ my_servo.write_angle(90)
 
 <!-- -->
 
-    '''
-    Args:
-            pin (machine.Pin): The pin where servo is connected. Must support PWM.
-            freq (int): The frequency of the signal, in hertz.
-            min_us (int): The minimum signal length supported by the servo.
-            max_us (int): The maximum signal length supported by the servo.
-            angle (int): The angle between the minimum and maximum positions.
-    '''
+```python
+    # Servo() Args:
+    #         pin (machine.Pin): The pin where servo is connected. Must support PWM.
+    #         freq (int): The frequency of the signal, in hertz.
+    #         min_us (int): The minimum signal length supported by the servo.
+    #         max_us (int): The maximum signal length supported by the servo.
+    #         angle (int): The angle between the minimum and maximum positions.
+    # default values
     my_servo = Servo(servo_pin, 50, 600, 2400, 180)
-
+```
 ### [servo_cycle.py](../examples/servo_cycle.py)
 
 This example uses a for loop to move a servo back and forth from 15 degree to 165 degrees.
