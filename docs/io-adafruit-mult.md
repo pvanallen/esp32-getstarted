@@ -1,9 +1,9 @@
 ## Using io.adafruit.com with multiple feeds/accounts
 
-It is often useful to host multiple feeds on io.adafruit.com to have more than a single value. For example, your device may have sensors for light and touch. To work with multiple values, there are two strategies:
+It is often useful to host multiple feeds on io.adafruit.com to track more than a single value. For example, your device may have sensors for light and touch. To work with multiple values, there are two strategies:
 
-- Use multiple feeds
-- Use more than one io.adafruit account
+- Use multiple feeds within one account
+- Use more than one io.adafruit account (may give you more bandwidth)
 
 This code example shows how to use multiple feeds, though it could easily adapted to use multiple accounts by changing the username and key for the different accounts and/or feeds.
 
