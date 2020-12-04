@@ -49,10 +49,10 @@ def sub_cb(topic, msg):
 Sets up the information to connect with your io.adafruit.com account and feeds
 ```python
 # create an Io object for each account and feed you are using
-ADAFRUIT_IO_USERNAME = "account_username"
-ADAFRUIT_IO_KEY = "account_key_password"
-your_unique_id1 = 'client1' # replace with your own client name unique to you and this code instance
-your_unique_id2 = 'client2' # replace with your own client name unique to you and this code instance
+ADAFRUIT_IO_USERNAME = "account_username" # get from KEY in io.adafruit.com menu
+ADAFRUIT_IO_KEY = "account_key_password" # get from KEY in io.adafruit.com menu
+your_unique_id1 = 'yourname1' # replace with your own client name unique to you and this code instance
+your_unique_id2 = 'yourname2' # replace with your own client name unique to you and this code instance
 light_feed = 'light' # replace with your feed name
 touch_feed = 'touch' # replace with your other feed name
 ```
