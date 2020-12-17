@@ -21,7 +21,7 @@ led_pin = machine.Pin(13, machine.Pin.OUT) # LED on the board
 
 # set up the global variables to retain cloud values for later processing
 # see the function sub_cb() for where these are set
-# also see the while True loop to see where they are evaluated
+# also see the main while True loop to see where they are evaluated
 light_value = 0
 touch_value = 0
 
@@ -75,6 +75,8 @@ def connect_mqtt(io_account):
 # create an Io object for each account and feed you are using
 ADAFRUIT_IO_USERNAME = "enter an Adafruit Username here"  # can be found at "My Account" at adafruit.com
 ADAFRUIT_IO_KEY = "enter an Adafruit IO Key here"  # can be found by clicking on "MY KEY" when viewing your account on io.adafruit.com
+ADAFRUIT_IO_USERNAME = "pvanallen"
+ADAFRUIT_IO_KEY = "ca67b97ac8adf9f9051f5333c72a53859af8ab07"
 your_unique_id1 = 'yourname1' # replace with your own client name unique to you and this code instance
 your_unique_id2 = 'yourname2' # replace with your own client name unique to you and this code instance
 light_feed = 'light' # replace with your feed name
@@ -100,41 +102,43 @@ io_light.publish(phil_light.feed + "/get", '\0')
 io_touch.publish(phil_touch.feed + "/get", '\0')
 
 while True:
-    try:
-        if time.time() - time_keeper > 5:
-            print(time.time() - start_time,"secs elapsed")
-            time_keeper = time.time()
-            print("Recent values for light",light_value,"touch",touch_value)
-            #
-            # publish sensor values to feeds
-            #
-            # uncomment next 5 lines and replace the random code with code to get your sensor values
-            # light_value = 100 * random.random() # replace this random part with your sensor check code
-            # touch_value = 100 * random.random() # replace this random part with your sensor check code
-            # io_light.publish(phil_light.feed, str(light_value))
-            # io_touch.publish(phil_touch.feed, str(touch_value))
-            # print("Published values to light and touch: ",light_value,touch_value)
 
-        # subscribe to feeds
-        io_light.check_msg() # get values from the io_light account
-        io_touch.check_msg() # get values from the io_touch account
+    if time.time() - time_keeper > 4:
+        # only send new data when time has passed
+        print(time.time() - start_time,"secs elapsed")
+        time_keeper = time.time()
+        print("Recent values for light",light_value,"touch",touch_value)
+        #
+        # publish sensor values to feeds
+        #
+        # uncomment next 2 lines and replace the random part of the code with code that gets your actual sensor values
+        light_value = 100 * random.random() # replace this random part with your sensor check code
+        touch_value = 100 * random.random() # replace this random part with your sensor check code
 
-        # act on the cloud values
-        if light_value > 10 and touch_value > 10:
-            # turn ON the board LED
-            led_pin.value(1)
-        else:
-            # turn OFF the board LED
-            led_pin.value(0)
-    except:
-        # sometimes io.adafruit.com disconnects with an error
-        print("error from io.adafruit - reconnecting...")
-        # create a new connection
-        io_light.disconnect()
-        io_touch.disconnect()
-        io_light = connect_mqtt(phil_light)
-        io_touch = connect_mqtt(phil_touch)
-        pass
+        try:
+            # publish the sensor values
+            io_light.publish(phil_light.feed, str(light_value))
+            io_touch.publish(phil_touch.feed, str(touch_value))
+            print("Published values to light and touch: ",light_value,touch_value)
+            # subscribe to feeds
+            io_light.check_msg() # get values from the io_light account
+            io_touch.check_msg() # get values from the io_touch account
+        except:
+            # sometimes io.adafruit.com disconnects with an error
+            print("problem with from io.adafruit - reconnecting...")
+            # create a new connection
+            io_light.disconnect()
+            io_touch.disconnect()
+            io_light = connect_mqtt(phil_light)
+            io_touch = connect_mqtt(phil_touch)
+            pass
 
+    # act on the cloud values
+    if light_value > 10 and touch_value > 10:
+        # turn ON the board LED
+        led_pin.value(1)
+    else:
+        # turn OFF the board LED
+        led_pin.value(0)
 
     time.sleep(delay)
