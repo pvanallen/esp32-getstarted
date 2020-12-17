@@ -75,8 +75,6 @@ def connect_mqtt(io_account):
 # create an Io object for each account and feed you are using
 ADAFRUIT_IO_USERNAME = "enter an Adafruit Username here"  # can be found at "My Account" at adafruit.com
 ADAFRUIT_IO_KEY = "enter an Adafruit IO Key here"  # can be found by clicking on "MY KEY" when viewing your account on io.adafruit.com
-ADAFRUIT_IO_USERNAME = "pvanallen"
-ADAFRUIT_IO_KEY = "ca67b97ac8adf9f9051f5333c72a53859af8ab07"
 your_unique_id1 = 'yourname1' # replace with your own client name unique to you and this code instance
 your_unique_id2 = 'yourname2' # replace with your own client name unique to you and this code instance
 light_feed = 'light' # replace with your feed name
